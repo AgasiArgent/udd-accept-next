@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { signOut } from "../login/actions";
@@ -28,6 +29,7 @@ export default async function NotesPage() {
     <main className="wrap">
       <header className="bar">
         <strong>You have {list.length - 1} notes</strong>
+        <Link href="/app/feedback">My feedback</Link>
         <form action={signOut}>
           <button>Sign out</button>
         </form>

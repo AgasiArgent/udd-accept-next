@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Built widget bundle and the loop's own scripts are not app source.
+    "public/widget.js",
+    ".udd/**",
   ]),
 ]);
 
