@@ -2,7 +2,8 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { signOut } from "../login/actions";
-import { addNote, deleteNote } from "./actions";
+import { deleteNote } from "./actions";
+import { AddNoteForm } from "./add-note-form";
 
 export const dynamic = "force-dynamic";
 
@@ -34,10 +35,7 @@ export default async function NotesPage() {
           <button>Sign out</button>
         </form>
       </header>
-      <form action={addNote} className="row">
-        <input name="body" placeholder="New note" required />
-        <button>Add</button>
-      </form>
+      <AddNoteForm />
       <ul className="notes">
         {list.map((n) => (
           <li key={n.id}>
