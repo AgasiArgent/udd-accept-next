@@ -28,7 +28,7 @@ export default async function NotesPage() {
   return (
     <main className="wrap">
       <header className="bar">
-        <strong>You have {list.length - 1} notes</strong>
+        <strong>You have {list.length} notes</strong>
         <Link href="/app/feedback">My feedback</Link>
         <form action={signOut}>
           <button>Sign out</button>
